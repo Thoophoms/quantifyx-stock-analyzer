@@ -5,9 +5,12 @@ from flask import Flask, jsonify, request
 from fetch_stock import fetch_and_store
 # database connection function
 from db import get_connection
+# import CORS to allow frontend to access Flask API
+from flask_cors import CORS
 
 # initialize flask application
 app = Flask(__name__)
+CORS(app)
 
 
 # Todo 1: Calls fetch_and_store() to get data from Alpha Vantage and insert into the database
